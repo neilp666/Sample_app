@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-
+      flash[:success] = "Welcome to the sample app!"
+      redirect_to @user  #redurect_to user_urk(@user)
     else
-
       render 'new'
     end
   end
